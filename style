@@ -1,0 +1,109 @@
+#nav ul ul {opacity:0.7; height:inherit; overflow:visible;}
+#nav ul ul li {
+    display:block;
+    max-height:0; overflow:hidden; margin:0; text-indent:20px;
+    -webkit-transition: max-height 0.2s;
+    transition: max-height 0.2s;
+}
+#nav ul li input {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    visibility:hidden;
+}
+#nav ul li input+label {
+    -webkit-font-smoothing:none;
+    font-smoothing:none;
+    display:block;
+    position:absolute;
+    top:0; right:0; 
+    padding:1em;
+    font-size:1.2em; line-height:1.2em;
+    color:#fff;
+    border-left:1px solid #111;
+    z-index:999;
+}
+#nav ul li input:checked+label {}
+#nav ul li input+label:before {
+    content:"▼"; color:rgba(255,255,255,.4);
+}
+#nav ul li input:checked+label:before {
+    content:"▲"; 
+}
+#nav ul li input+label:hover:before {
+    color:rgb(160,216,239);
+}
+#nav ul li input:checked ~ ul li {max-height:100px; margin:1px 0;}
+
+/*
+
+#nav ul ul:before {
+    content:"▼";
+    -webkit-font-smoothing:none;
+    font-smoothing:none;
+    display:block;
+    position:absolute;
+    bottom:100%; right:0; 
+    padding:1em;
+    font-size:1.2em; line-height:1.2em;
+    color:#fff;
+    border-left:1px solid #111;
+    z-index:999;
+}
+
+#nav ul ul:hover:before {color: rgb(160,216,239); background:#444; margin-bottom:1px;}
+
+
+#nav ul ul:hover li {max-height:100px; margin:1px 0;}
+*/
+
+/* wrap everything else in a positioned element that we can move */
+#main {
+  min-height: 100%;
+  min-width: 100%;
+  position: relative;
+  top: 0;
+  bottom: 100%;
+  left: 0;
+  z-index: 1;  
+  padding: 50px;
+}
+
+
+/* animate the transitions */
+#main, #nav {
+    -webkit-transition: right 0.2s, left 0.2s, margin 0.2s, background 0.2s;
+    transition: right 0.2s, left 0.2s, margin 0.2s, background 0.2s;
+}
+
+/* move if nav-trigger is checked */
+#nav-trigger:checked ~ #nav {
+    position: fixed;
+    right: 0;
+}
+#nav-trigger:checked ~ #nav .burger {
+    /*transform: rotate(180deg); = unnecessary funk */
+}
+#nav-trigger:checked ~ #main {
+    left: -300px; /* <- could move this less than the menu for a staggered effect (or zero if you want the menu to have a slide over effect) */
+    background:rgba(0,0,0,.1);
+    height:100%;
+    overflow:hidden;
+    pointer-events:none;
+}
+
+#nav-trigger:checked ~ #main * {
+ -webkit-filter: blur(2px) grayscale(0.5);
+  -moz-filter: blur(2px) grayscale(0.5);
+  -o-filter: blur(2px) grayscale(0.5);
+  -ms-filter: blur(2px) grayscale(0.5);
+  filter: blur(2px) grayscale(0.5);
+}
+
+
+
+/* unrelated styles (to make this page look pretty) */
+h1, p, hr, #main ul {margin-bottom:1em;}
+body {    
+  background: rgb(180,200,220);
+  overflow-x: hidden;
+}
