@@ -12,3 +12,6 @@ NOTES TO SELF:
 
 NOTES TO USER:
  - Want the menu to be open on load? Just set `nav-trigger` input to `selected`.
+
+
+http://jsfiddle.net/moob/efnrqf6w/
