@@ -1,4 +1,4 @@
-# CSS Push Menu
+# CSS Push-out Menu
 A CSS only push-out menu column
 
 This push-out menu uses a checkbox and [General Sibling selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/General_sibling_selectors) to determine if the menu is shown.
