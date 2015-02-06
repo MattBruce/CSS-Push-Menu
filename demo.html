@@ -1,0 +1,60 @@
+<html>
+<head>
+    <title>onElementResize Demo</title>
+    <link rel="stylesheet" href="example.css" />
+    <script>
+    /* 
+    TO DO: Create JS inplementation of :checked for <IE9 
+    */
+    </script>
+</head>
+<body>
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+
+<div id="nav">
+    <label class="burger" for="nav-trigger">&#9776;</label><!-- consider #8801 -->
+    <ul>
+        <li><a href="#">Menu Item</a></li>
+        <li><a href="#">This Thing</a></li>
+        <li><a href="#">Another Thing</a></li>
+        <li><a href="#">Something Else</a><input type="checkbox" id="submenu1" /><label for="submenu1"></label><ul>
+            <li><a href="#">Sub Item</a></li>
+            <li><a href="#">This Thing</a></li>
+            <li><a href="#">Sub Item</a></li>
+            <li><a href="#">This Thing</a></li>
+        </ul></li>
+        <li><a href="#">Kittens</a></li>
+        <li><label for="nav-trigger">&#9776; &rarr; Close Menu</label></li>
+    </ul>
+</div>
+
+<div id="main">
+    <h1>CSS Push-out Menu</h1>
+    
+    <p>This push out menu uses a checkbox and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/General_sibling_selectors">general sibling selectors</a> to determine if the menu is shown.</p>
+    <p>At the time of writing this is untested but should be supported all modern browsers (ie9 up) and work on touch devices too. <=ie8 needs js to support css `:checked` selector. Selectivizr does this.</p>
+
+    NOTES TO SELF:
+        <ul>
+            <li>General sibling selector (~) support is excellent (ie7+)</li>
+            <li>but :checked is not. Add Selectivizr or similar to this demo</li>
+            <li>nested menus were not closable in build <=15 but I dont much like this checkbox solution as it makes the menu ugly. Perhaps there's a better way?</li>
+        </ul>
+
+    NOTES TO USER:
+        <ul>
+            <li>Want the menu to be open on load? Just set <code>nav-trigger</code> input to <code>selected</code>.</li>
+    </ul>
+    
+    <hr />
+    
+    <p>Aenean lacinia bibendum nulla sed consectetur. Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec sed odio dui. Vestibulum id ligula porta felis euismod semper.</p>
+<p>
+Nulla vitae elit libero, a pharetra augue. Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+<p>
+Nullam quis risus eget urna mollis ornare vel eu leo. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+<p>
+Sed posuere consectetur est at lobortis. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec ullamcorper nulla non metus auctor fringilla. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+</div>
+</body>
+</html>
